@@ -18,8 +18,6 @@ Protection des systèmes et des données via des compétences en cybersécurité
 
 📚 Contenu pédagogique
 
-Semestre 1 (S5)
-
 Algorithmique et Programmation Python
 
 Bases de Données et Sécurité
@@ -30,9 +28,7 @@ Visualisation des données et statistiques
 
 Intelligence Artificielle et Machine Learning
 
-Anglais 1
-
-Semestre 2 (S6)
+Anglais 
 
 Deep Learning
 
@@ -44,7 +40,7 @@ Business Intelligence et ERP
 
 Intelligence Artificielle pour Cybersécurité
 
-Anglais 2
+CMS 
 
 🚀 Débouchés professionnels
 
