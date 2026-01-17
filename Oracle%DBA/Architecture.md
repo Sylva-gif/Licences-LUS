@@ -45,6 +45,9 @@ Ils assurent la liaison entre la mémoire vive et le stockage physique :
 
 ### 🚀 Commandes Essentielles du DBA (SQL*Plus)
 ```sql
+
+--Connection a Sqlplus
+sqlplus user/pass@ or sqlplus / as sysdba ;
 -- Vérifier l'état de l'instance
 SELECT instance_name, status FROM v$instance;
 
