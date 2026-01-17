@@ -1,77 +1,59 @@
 # 📂 Résumé de Cours : Architecture & Administration Oracle Database 21c
 
-## 🏗️ 1. Architecture du Serveur Oracle
-Un serveur Oracle est l'association d'une **Instance** et d'une **Base de données**.
+## 🏗️ 1. Schéma Global de l'Architecture
+Voici la structure d'un serveur Oracle (Instance + Base de données) telle qu'étudiée en cours.
 
-*   **L'Instance** : Structure éphémère en mémoire (SGA) + Processus d'arrière-plan. Elle est identifiée par un `SID`.
-*   **La Base de Données** : Ensemble de fichiers physiques stockés sur disque.
-    *   **Data files** : Contiennent les données réelles.
-    *   **Control files** : Contiennent l'état de la base et sa structure.
-    *   **Redo Log files** : Enregistrent les changements pour la récupération.
+![Architecture Oracle Database](architecture.jpg(1).jpg)
 
 ---
 
-## 🧠 2. Structures Mémoire
+## 🧠 2. Structures Mémoire (Détails du Schéma)
 
-### A. SGA (System Global Area) - Partagée
-Allouée au démarrage de l'instance, elle est commune à tous les utilisateurs.
-*   **Shared Pool** : 
-    *   *Library Cache* : Stocke les instructions SQL/PLSQL.
-    *   *Data Dictionary Cache* : Stocke les définitions d'objets et privilèges.
-*   **Database Buffer Cache** : Cache pour les blocs de données lus sur le disque.
-*   **Redo Log Buffer** : Journalise les transactions avant écriture sur disque.
-*   **Large Pool / Java Pool** : Zones spécialisées (RMAN, serveurs partagés, Java).
+### A. L'Instance (SGA - System Global Area)
+La **SGA** est la mémoire partagée, allouée au démarrage de l'instance.
+*   **Zone de mémoire partagée (Shared Pool)** : 
+    *   *Cache "library"* : Stocke les dernières instructions SQL et PL/SQL exécutées.
+    *   *Cache du dictionnaire* : Contient les définitions des objets (tables, colonnes) et les privilèges.
+*   **Cache de tampons (Buffer Cache)** : Stocke les blocs de données lus depuis les fichiers de données pour accélérer les futurs accès.
+*   **Tampon de journalisation (Redo Log Buffer)** : Enregistre toutes les modifications apportées à la base pour permettre la récupération en cas de panne.
+*   **Zone Java & Large Pool** : Utilisées pour l'analyse des commandes Java et les opérations lourdes (RMAN, serveurs partagés).
 
-### B. PGA (Program Global Area) - Privée
-Mémoire dédiée à chaque processus serveur (non partagée). Elle contient les informations de session, les tris et les variables locales.
-
-> **Gestion 21c** : Utilisation du mode **AMM (Automatic Memory Management)** avec les paramètres `MEMORY_TARGET` et `MEMORY_MAX_TARGET`.
+### B. La Mémoire Privée (PGA - Program Global Area)
+Chaque **Processus Serveur** possède sa propre **PGA**. Contrairement à la SGA, elle n'est pas partagée. Elle sert au tri des données et à la gestion des variables de session utilisateur.
 
 ---
 
-## ⚙️ 3. Processus d'Arrière-plan (Background Processes)
-Ils assurent la maintenance et la liaison Mémoire ↔ Disque.
-*   **DBWn (Database Writer)** : Écrit les blocs de données modifiés sur disque.
-*   **LGWR (Log Writer)** : Écrit les entrées du Redo Log Buffer dans les fichiers Redo Log (se déclenche au COMMIT, toutes les 3s, ou si le buffer est 1/3 plein).
-*   **CKPT (Checkpoint)** : Met à jour les en-têtes des fichiers pour signaler la synchronisation.
-*   **SMON (System Monitor)** : Récupération après crash (Instance Recovery).
-*   **PMON (Process Monitor)** : Nettoie les sessions utilisateur en échec.
+## ⚙️ 3. Les Processus d'Arrière-plan
+Ils assurent la liaison entre la mémoire vive et le stockage physique :
+*   **DBWR (Database Writer)** : Écrit les données modifiées (dirty buffers) du cache vers les fichiers de données.
+*   **LGWR (Log Writer)** : Écrit le contenu du Redo Log Buffer dans les fichiers de journalisation sur disque.
+*   **CKPT (Checkpoint)** : Met à jour les fichiers de contrôle et déclenche l'écriture des données pour garantir la synchronisation.
+*   **PMON (Process Monitor)** : Surveille les processus serveurs et nettoie les ressources des sessions utilisateur défaillantes.
+*   **SMON (System Monitor)** : Récupère l'instance automatiquement après une panne et nettoie les segments temporaires.
 
 ---
 
-## 📑 4. Fichiers de Paramètres (Configuration)
-| Caractéristique | **PFILE** (initSID.ora) | **SPFILE** (spfileSID.ora) |
-| :--- | :--- | :--- |
-| **Format** | Texte (Éditable à la main) | Binaire (Non éditable) |
-| **Modification** | Nécessite un redémarrage | Dynamique (`ALTER SYSTEM`) |
-| **Priorité** | Secondaire | Prioritaire au démarrage |
+## 💾 4. Structure Physique (La Base de Données)
+*   **Fichiers de données (.dbf)** : Stockage réel des informations.
+*   **Fichiers de contrôle (.ctl)** : Contient la structure physique de la base (essentiel pour le démarrage).
+*   **Fichiers de journalisation (.log)** : Historique des transactions (Redo Logs).
+*   **Fichiers de Journalisation archivés** : Copies des journaux permettant une restauration historique (Point-in-Time Recovery).
 
 ---
 
-## 🛠️ 5. Outils d'Administration
-*   **SQL*Plus** : L'outil de base en ligne de commande.
-*   **OUI (Oracle Universal Installer)** : Pour l'installation du logiciel.
-*   **DBCA** : Pour la création et configuration de la base de données.
-*   **OEM (Enterprise Manager)** : Interface graphique pour l'administration et le monitoring (gestion 21c : Blockchain tables, AutoML, JSON).
+## 💼 5. Ressources & Pratiques pour le Milieu Professionnel
 
----
-
-## 💼 6. Ressources & Milieu Professionnel (Expert DBA)
-
-### 🚀 Commandes Essentielles (Cheat Sheet)
+### 🚀 Commandes Essentielles du DBA (SQL*Plus)
 ```sql
--- Connexion admin
-sqlplus / as sysdba
+-- Vérifier l'état de l'instance
+SELECT instance_name, status FROM v$instance;
 
--- Vérifier le mode de démarrage (PFILE ou SPFILE)
+-- Identifier si on utilise un SPFILE (binaire) ou PFILE (texte)
 SHOW PARAMETER spfile;
 
--- Modifier un paramètre dynamiquement
-ALTER SYSTEM SET shared_pool_size = 500M SCOPE=BOTH;
+-- Voir la configuration de la mémoire automatique (21c)
+SHOW PARAMETER memory_target;
 
--- Créer un utilisateur et donner des droits
-CREATE USER mon_user IDENTIFIED BY mot_de_passe;
-GRANT CONNECT, RESOURCE TO mon_user;
-
--- État de la base
-SELECT status FROM v$instance;
+-- Créer un utilisateur et lui accorder des droits
+CREATE USER dba_admin IDENTIFIED BY password123;
+GRANT DBA TO dba_admin;
