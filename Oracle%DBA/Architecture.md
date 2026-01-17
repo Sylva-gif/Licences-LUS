@@ -3,7 +3,7 @@
 ## 🏗️ 1. Schéma Global de l'Architecture
 Voici la structure d'un serveur Oracle (Instance + Base de données) telle qu'étudiée en cours.
 
-![Architecture Oracle Database](architecture.jpg(1).jpg)
+![Architecture Oracle Database](architecture.jpg)
 
 ---
 
