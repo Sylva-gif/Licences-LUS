@@ -125,6 +125,7 @@
 - Peu sécurisé (pas de chiffrement).
 
 ---
+![Listes des ports](numéroport.JPG)
 
 ## Résumé visuel
 
