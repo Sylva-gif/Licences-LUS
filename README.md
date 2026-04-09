@@ -1,4 +1,4 @@
-##Licences-LUS
+##LUS
 
 🎯 Objectifs de la formation
 
@@ -42,7 +42,7 @@ Intelligence Artificielle pour Cybersécurité
 
 CMS 
 
-🚀 Débouchés professionnels
+🚀 Profession de sortir 
 
 Data Scientist
 
