@@ -505,12 +505,19 @@ if saved_metrics and models_loaded:
         (rf_vals,  "Random Forest", "#38bdf8"),
         (svm_vals, "SVM (RBF)",     "#34d399"),
     ]:
+        if color.startswith("#") and len(color) == 7:
+            rgb = tuple(int(color[i:i+2], 16) for i in (1, 3, 5))
+            fillcolor = f"rgba({rgb[0]},{rgb[1]},{rgb[2]},0.12)"
+        elif color.startswith("rgb("):
+            fillcolor = color.replace("rgb(", "rgba(").replace(")", ",0.12)")
+        else:
+            fillcolor = color
+
         fig_radar.add_trace(go.Scatterpolar(
             r=vals + [vals[0]], theta=categories + [categories[0]],
             fill="toself", name=name,
             line=dict(color=color, width=2),
-            fillcolor=color.replace(")", ",0.12)").replace("rgb","rgba") if "rgb" in color
-                      else f"{color}20",
+            fillcolor=fillcolor,
             marker=dict(color=color, size=6)
         ))
     fig_radar.update_layout(
