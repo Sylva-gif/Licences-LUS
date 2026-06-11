@@ -631,5 +631,3 @@ FROM ML.PREDICT(MODEL `mon_projet.mon_modele`,
 - [ ] Je suis capable d'utiliser l'IA pour générer et optimiser mes requêtes SQL
 
 ---
-
-*Document généré par Claude — Juin 2026*
