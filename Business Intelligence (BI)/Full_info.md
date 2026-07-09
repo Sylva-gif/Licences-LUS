@@ -1003,7 +1003,6 @@ Ces certifications permettent de valider et faire reconnaître les compétences 
 | IBM AI Engineering Professional Certificate | IBM (Coursera) | https://www.coursera.org/professional-certificates/ai-engineer |
 | DeepLearning.AI — Generative AI for Data Analysis | DeepLearning.AI (Coursera) | https://www.coursera.org/learn/generative-ai-for-data-analysis |
 
-> **Recommandation de parcours pour Abib** (cohérent avec le profil cybersécurité + data science déjà en cours) :
 > 1. **PL-300** (Power BI Data Analyst) — validation directe des chapitres 4 et 5 de ce cours, forte reconnaissance sur le marché francophone africain et international.
 > 2. **SnowPro Core** ou **DP-700 (Fabric Data Engineer)** — valorise les chapitres 3 et 4 (ETL, Data Warehouse cloud), pertinent pour les rôles visés (CNIN, ASIN) où l'infrastructure data est de plus en plus cloud-native.
 > 3. **DP-100 (Azure Data Scientist)** — pont naturel vers le chapitre 6 (IA & BI), complémentaire du profil cybersécurité/data science déjà engagé à l'ENSA.
