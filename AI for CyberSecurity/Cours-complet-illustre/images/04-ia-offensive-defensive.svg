@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Chapitre 4 · IA offensive, défensive &amp; résilience</title>
+  <desc id="desc">Une même technologie peut accélérer l’attaque comme la défense</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#101b35"/>
+    </linearGradient>
+    <style>
+      .title{font:700 54px Arial,sans-serif;fill:#f8fafc}
+      .subtitle{font:400 25px Arial,sans-serif;fill:#a9b8d0}
+      .cardTitle{font:700 26px Arial,sans-serif;fill:#f8fafc}
+      .body{font:400 21px Arial,sans-serif;fill:#dbe7f5}
+      .footer{font:600 20px Arial,sans-serif;fill:#8fa6c2}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="18" height="900" fill="#20d3c2"/>
+  <text x="70" y="95" class="title">Chapitre 4 · IA offensive, défensive &amp; résilience</text>
+  <text x="70" y="145" class="subtitle">Une même technologie peut accélérer l’attaque comme la défense</text>
+  <line x1="70" y1="185" x2="1530" y2="185" stroke="#28405f" stroke-width="2"/>
+  <g>
+      <rect x="70" y="240" width="450" height="230" rx="26" fill="#111c32" stroke="#ff6b6b" stroke-width="3"/>
+      <circle cx="112" cy="285" r="18" fill="#ff6b6b"/>
+      <text x="145" y="296" class="cardTitle">IA offensive</text>
+      <text x="100" y="332" class="body">Phishing personnalisé</text><text x="100" y="366" class="body">Reconnaissance accélérée</text><text x="100" y="400" class="body">Malwares adaptatifs</text>
+    </g><g>
+      <rect x="575" y="240" width="450" height="230" rx="26" fill="#111c32" stroke="#20d3c2" stroke-width="3"/>
+      <circle cx="617" cy="285" r="18" fill="#20d3c2"/>
+      <text x="650" y="296" class="cardTitle">IA défensive</text>
+      <text x="605" y="332" class="body">SOC augmenté</text><text x="605" y="366" class="body">XDR et threat hunting</text><text x="605" y="400" class="body">Réponse automatisée</text>
+    </g><g>
+      <rect x="1080" y="240" width="450" height="230" rx="26" fill="#111c32" stroke="#ffbf69" stroke-width="3"/>
+      <circle cx="1122" cy="285" r="18" fill="#ffbf69"/>
+      <text x="1155" y="296" class="cardTitle">Evasion</text>
+      <text x="1110" y="332" class="body">Exemples adversariaux</text><text x="1110" y="366" class="body">Contournement du modèle</text><text x="1110" y="400" class="body">Tests de robustesse</text>
+    </g><g>
+      <rect x="325" y="520" width="450" height="230" rx="26" fill="#111c32" stroke="#b388ff" stroke-width="3"/>
+      <circle cx="367" cy="565" r="18" fill="#b388ff"/>
+      <text x="400" y="576" class="cardTitle">Poisoning &amp; vol</text>
+      <text x="355" y="612" class="body">Données empoisonnées</text><text x="355" y="646" class="body">Extraction du modèle</text><text x="355" y="680" class="body">Inversion &amp; inférence</text>
+    </g><g>
+      <rect x="830" y="520" width="450" height="230" rx="26" fill="#111c32" stroke="#63a4ff" stroke-width="3"/>
+      <circle cx="872" cy="565" r="18" fill="#63a4ff"/>
+      <text x="905" y="576" class="cardTitle">LLM Security</text>
+      <text x="860" y="612" class="body">Prompt injection</text><text x="860" y="646" class="body">Fuite de données</text><text x="860" y="680" class="body">Chaîne d’outils compromise</text>
+    </g>
+  <text x="800" y="850" text-anchor="middle" class="footer">Défense en profondeur : données, modèle, API, monitoring, humain et gouvernance.</text>
+</svg>
