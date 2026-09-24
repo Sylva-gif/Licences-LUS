@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="940" viewBox="0 0 1240 940" role="img" aria-labelledby="title desc">
+<title id="title">Le cycle d’optimisation</title><desc id="desc">PyTorch explicite la boucle ; Keras l’orchestre. À l’inférence, les poids restent fixes et les gradients ne sont pas nécessaires.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#438295"/></marker></defs>
+<rect width="1240" height="940" fill="#eef4f8"/>
+<rect width="1240" height="150" fill="#112b43"/>
+<text x="60" y="38" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#65d6bd">LICENCES-LUS • ALGORITHMIQUE ET PROGRAMMATION PYTHON</text>
+<text x="60" y="85" font-family="DejaVu Sans,sans-serif" font-size="32" font-weight="bold" fill="white">Le cycle d’optimisation</text>
+<text x="60" y="121" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#d4e3ee">PyTorch explicite la boucle ; Keras l’orchestre</text>
+<path d="M580,265.0 L660,265.0" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M920.0,340 L920.0,420" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M920.0,570 L920.0,650" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M660,725.0 L580,495.0" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M320.0,570 L320.0,650" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M60,725.0 H35 V265.0 H60" stroke="#438295" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="60" y="190" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="60" y="190" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="85" y="232" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Batch de tenseurs</text>
+<text x="85" y="271" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Forme : observations × caractéristiques</text>
+<rect x="660" y="190" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="660" y="190" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="685" y="232" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Passe avant</text>
+<text x="685" y="271" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Couches, activations et prédiction</text>
+<rect x="60" y="420" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="60" y="420" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="85" y="462" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Optimiseur</text>
+<text x="85" y="501" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Mise à jour des poids selon gradients</text>
+<rect x="660" y="420" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="660" y="420" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="685" y="462" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Perte</text>
+<text x="685" y="501" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Écart entre prédiction et cible</text>
+<rect x="60" y="650" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="60" y="650" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="85" y="692" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Paramètres mis à jour</text>
+<text x="85" y="731" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Prochaine itération d’entraînement</text>
+<rect x="660" y="650" width="520" height="150" rx="14" fill="white" stroke="#ccdbe5"/>
+<rect x="660" y="650" width="7" height="150" rx="3" fill="#00897b"/>
+<text x="685" y="692" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#16354d">Rétropropagation</text>
+<text x="685" y="731" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">Dérivées de la perte par</text>
+<text x="685" y="758" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#41576b">autodifférentiation</text>
+<text x="60" y="858" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#16354d">À l’inférence, les poids restent fixes et les gradients ne sont pas nécessaires.</text>
+</svg>

@@ -18,7 +18,7 @@ Protection des systèmes et des données via des compétences en cybersécurité
 
 📚 Contenu pédagogique
 
-Algorithmique et Programmation Python
+[Algorithmique et Programmation Python — cours illustré et projet PyQt5](Algorithmique-et-Programmation-Python/README.md)
 
 Bases de Données et Sécurité
 
