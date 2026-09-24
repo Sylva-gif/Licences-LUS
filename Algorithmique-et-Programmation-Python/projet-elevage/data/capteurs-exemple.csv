@@ -1,0 +1,4 @@
+barn,measured_at,temperature,humidity
+Atelier A,2026-01-01T08:00:00+00:00,24.5,62
+Atelier A,2026-01-01T08:05:00+00:00,25.1,60
+Atelier B,2026-01-01T08:05:00+00:00,23.8,65
